@@ -8,10 +8,42 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: {
+          pink: { DEFAULT: "#FFCFE2", deep: "#ED35CB" },
+          custard: "#FFF4A5",
+        },
+        body: {
+          text: "#1E1E1E",
+        },
+      },
+      fontFamily: {
+        noto: ["var(--noto-sans-mono)", "sans-serif"],
+        dm: ["var(--dm-sans)", "sans-serif"],
+        millik: ["millik", "sans"],
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          "2xl": "0px",
+        },
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+          "2xl": "1377px",
+          "3xl": "1377px",
+          "4xl": "1377px",
+          "5xl": "1377px",
+        },
+      },
+      zIndex: {
+        header: "5",
+      },
+      boxShadow: {
+        pink: "0px 4px 0px #E126FF",
       },
     },
   },

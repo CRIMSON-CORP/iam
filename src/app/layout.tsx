@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const notoSansMono = Noto_Sans_Mono({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--noto-sans-mono",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--dm-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${notoSansMono.variable} ${dmSans.variable} bg-[#FFFEF2]`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

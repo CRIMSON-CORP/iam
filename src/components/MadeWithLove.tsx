@@ -31,10 +31,10 @@ function MadeWithLove({
             stroke: "#ffffff",
             transition: {
               fill: {
-                duration: 3,
+                duration: 2,
               },
               pathLength: {
-                duration: 35,
+                duration: 25,
               },
               stroke: {
                 delay: 3,

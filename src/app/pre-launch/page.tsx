@@ -180,6 +180,7 @@ function Hero() {
               <input
                 type="email"
                 name="email"
+                autoComplete="on"
                 placeholder="Enter your email"
                 className="py-5 px-8 bg-primary-custard rounded-[50px] border-b border-body-text justify-start items-center gap-0.5 inline-flex text-body-text placeholder:text-body-text placeholder:text-opacity-50 text-base font-medium font-noto flex-1"
               />
@@ -697,19 +698,45 @@ const heartBeat: Variants = {
 
 function Footer() {
   const [scope, animate] = useAnimate();
+  const [scopeMarquee, animateMarquee] = useAnimate();
 
   useEffect(() => {
     sendButtonAnimation(scope, animate);
-  }, [animate, scope]);
+
+    (async () => {
+      animateMarquee(
+        scopeMarquee.current,
+        {
+          x: "-97%",
+        },
+        {
+          ease: "linear",
+          duration: 40,
+          repeat: Infinity,
+        }
+      );
+    })();
+  }, [animate, animateMarquee, scope, scopeMarquee]);
   return (
-    <footer className="relative bg-[#ED35CB]/10 pt-40 lg:pt-0 px-9">
-      <Image
-        src="/wavy-pink-footer.svg"
-        width={1920}
-        height={62.5}
-        alt="wavy"
-        className="absolute top-0 left-0 w-full -translate-y-[calc(100%-1px)]"
-      />
+    <footer className="relative bg-[#ED35CB]/10 pt-40 lg:pt-0 px-9 overflow-x-clip">
+      <div ref={scopeMarquee} className="absolute top-0 left-0 w-full ">
+        <div className="-translate-y-[calc(100%-1px)] flex items-center">
+          <Image
+            src="/wavy-pink-footer.svg"
+            width={1920}
+            height={62.5}
+            alt="wavy"
+            className="w-full absolute top-0 left-0"
+          />
+          <Image
+            src="/wavy-pink-footer.svg"
+            width={1920}
+            height={62.5}
+            alt="wavy"
+            className="w-full top-0 left-0 translate-x-[100%]"
+          />
+        </div>
+      </div>
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
           <div className="relative aspect-[576.3/384.48] rounded-[20px] bg-primary-pink *:absolute">
@@ -823,17 +850,20 @@ function Footer() {
                 type="text"
                 name="name"
                 placeholder="Your name"
+                autoComplete="on"
                 className="px-7 py-2.5 leading-none bg-[#ED35CB]/10 border-b border-body-text text-body-text placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <input
                 type="email"
                 name="email"
+                autoComplete="on"
                 placeholder="Email"
                 className="px-7 py-2.5 leading-none bg-[#ED35CB]/10 border-b border-body-text text-body-text placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <input
                 type="tel"
                 name="phone-number"
+                autoComplete="on"
                 placeholder="+234 800 123 4567"
                 className="px-7 py-2.5 leading-none bg-[#ED35CB]/10 border-b border-body-text text-body-text placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />

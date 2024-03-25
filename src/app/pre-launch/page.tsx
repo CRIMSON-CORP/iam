@@ -2,6 +2,7 @@
 import MadeWithLove from "@/components/MadeWithLove";
 import { viewport } from "@/utils/general-viewport-property";
 import { sendButtonAnimation } from "@/utils/send-button-icon-animation";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import { Variants, motion, useAnimate } from "framer-motion";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -65,7 +66,7 @@ function Header() {
 
 function Main() {
   return (
-    <>
+    <ReactLenis root>
       <Hero />
       <main className="flex flex-col gap-8 pt-16 sm:pt-36 pb-40">
         <OurProduct />
@@ -73,7 +74,7 @@ function Main() {
         <FindUs />
       </main>
       <Footer />
-    </>
+    </ReactLenis>
   );
 }
 

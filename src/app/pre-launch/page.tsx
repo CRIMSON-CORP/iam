@@ -211,7 +211,7 @@ function Hero() {
             width={1920}
             height={62.5}
             alt="wavy"
-            className="w-full top-0 left-0 translate-x-[97%]"
+            className="w-full top-0 left-0 translate-x-[calc(100%-1px)]"
           />
         </div>
       </div>
@@ -242,7 +242,7 @@ const wavyBounceInVariants: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: (i || 0) * 0.5,
+      // delay: (i || 0) * 0.5,
       damping: 15,
       mass: 3,
       stiffness: 120,
@@ -304,7 +304,10 @@ function OurProduct() {
               width={97}
               className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[10%] md:-translate-y-1/2"
             />
-            <div className="absolute right-0 bottom-1/4 translate-y-1/2 translate-x-1/2 sm:translate-x-full aspect-square flex justify-center items-center isolate">
+            <motion.div
+              whileInView="spin"
+              className="absolute right-0 bottom-1/4 translate-y-1/2 translate-x-1/2 sm:translate-x-full aspect-square flex justify-center items-center isolate"
+            >
               <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-10">
                 <motion.div variants={wavyBounceInVariants} whileInView="spin">
                   <motion.svg
@@ -359,7 +362,7 @@ function OurProduct() {
                   Organic & Toxin-free
                 </motion.p>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
           <motion.div
             initial="initial"

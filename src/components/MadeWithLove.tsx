@@ -37,7 +37,7 @@ function MadeWithLove({
                 duration: 25,
               },
               stroke: {
-                delay: 3,
+                delay: 2,
                 duration: 1,
               },
               ease: [0.17, 0.67, 0.16, 0.99],

@@ -3,9 +3,9 @@ import MadeWithLove from "@/components/MadeWithLove";
 import { viewport } from "@/utils/general-viewport-property";
 import { sendButtonAnimation } from "@/utils/send-button-icon-animation";
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { Variants, motion, useAnimate } from "framer-motion";
+import { Variants, motion, useAnimate, useInView } from "framer-motion";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function page() {
   return (
@@ -182,11 +182,11 @@ function Hero() {
                 name="email"
                 autoComplete="on"
                 placeholder="Enter your email"
-                className="py-5 px-8 bg-primary-custard rounded-[50px] border-b border-body-text justify-start items-center gap-0.5 inline-flex text-body-text placeholder:text-body-text placeholder:text-opacity-50 text-base font-medium font-noto flex-1"
+                className="w-full py-5 px-8 bg-primary-custard rounded-[50px] border-b border-body-text justify-start items-center gap-0.5 inline-flex text-body-text placeholder:text-body-text placeholder:text-opacity-50 text-base font-medium font-noto flex-1"
               />
               <button
                 type="submit"
-                className="size-14 p-4 bg-body-text rounded-[50px] border border-body-text justify-center items-center gap-0.5 inline-flex overflow-hidden"
+                className="flex-none size-14 p-4 bg-body-text rounded-[50px] border border-body-text justify-center items-center gap-0.5 inline-flex overflow-hidden"
               >
                 <svg ref={scope} width={24} height={24}>
                   <use href="/icons.svg#arrow-left-up" fill="white" />
@@ -238,11 +238,11 @@ const wavyBounceInVariants: Variants = {
     opacity: 0,
     scale: 0.5,
   },
-  animte: (i) => ({
+  animate: (i) => ({
     opacity: 1,
     scale: 1,
     transition: {
-      // delay: (i || 0) * 0.5,
+      delay: (i || 0) * 0.5,
       damping: 15,
       mass: 3,
       stiffness: 120,
@@ -304,65 +304,7 @@ function OurProduct() {
               width={97}
               className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[10%] md:-translate-y-1/2"
             />
-            <motion.div
-              whileInView="spin"
-              className="absolute right-0 bottom-1/4 translate-y-1/2 translate-x-1/2 sm:translate-x-full aspect-square flex justify-center items-center isolate"
-            >
-              <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-10">
-                <motion.div variants={wavyBounceInVariants} whileInView="spin">
-                  <motion.svg
-                    variants={wavyBounceInVariants}
-                    initial="initial"
-                    whileInView="animte"
-                    viewport={viewport}
-                    width={119}
-                    height={119}
-                  >
-                    <use href="/icons.svg#wavy-star" />
-                  </motion.svg>
-                </motion.div>
-              </div>
-              <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-20">
-                <motion.div
-                  variants={wavyBounceInVariants}
-                  whileInView="spin"
-                  viewport={viewport}
-                >
-                  <motion.svg
-                    custom={0.5}
-                    variants={wavyBounceInVariants}
-                    initial="initial"
-                    whileInView="animte"
-                    viewport={viewport}
-                    width={131}
-                    height={131}
-                  >
-                    <use href="/icons.svg#wavy-star-stroke" />
-                  </motion.svg>
-                </motion.div>
-              </div>
-              <motion.div
-                initial="initial"
-                whileInView="animate"
-                viewport={viewport}
-                variants={heroContentVariants}
-                className="flex flex-col items-center gap-1 w-3/4"
-              >
-                <motion.svg
-                  variants={wavyBounceInContentVariants}
-                  width="70"
-                  height="19"
-                >
-                  <use href="/icons.svg#100-perc" width="70" height="19" />
-                </motion.svg>
-                <motion.p
-                  variants={wavyBounceInContentVariants}
-                  className="text-center text-black text-opacity-70 text-sm font-bold font-dm"
-                >
-                  Organic & Toxin-free
-                </motion.p>
-              </motion.div>
-            </motion.div>
+            <Organic />
           </div>
           <motion.div
             initial="initial"
@@ -392,6 +334,75 @@ function OurProduct() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Organic() {
+  const container = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(container, { once: true });
+  return (
+    <div
+      ref={container}
+      className="absolute right-0 bottom-1/4 translate-y-1/2 translate-x-1/2 sm:translate-x-full aspect-square flex justify-center items-center isolate"
+    >
+      <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-10">
+        <motion.div
+          variants={wavyBounceInVariants}
+          animate={inView ? "spin" : ""}
+        >
+          <motion.svg
+            variants={wavyBounceInVariants}
+            initial="initial"
+            animate={inView ? "animate" : ""}
+            viewport={viewport}
+            width={119}
+            height={119}
+          >
+            <use href="/icons.svg#wavy-star" />
+          </motion.svg>
+        </motion.div>
+      </div>
+      <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 -z-20">
+        <motion.div
+          variants={wavyBounceInVariants}
+          animate={inView ? "spin" : ""}
+          viewport={viewport}
+        >
+          <motion.svg
+            custom={0.5}
+            variants={wavyBounceInVariants}
+            initial="initial"
+            animate={inView ? "animate" : ""}
+            viewport={viewport}
+            width={131}
+            height={131}
+          >
+            <use href="/icons.svg#wavy-star-stroke" />
+          </motion.svg>
+        </motion.div>
+      </div>
+      <motion.div
+        initial="initial"
+        animate={inView ? "animate" : ""}
+        viewport={viewport}
+        variants={heroContentVariants}
+        className="flex flex-col items-center gap-1 w-3/4"
+      >
+        <motion.svg
+          variants={wavyBounceInContentVariants}
+          width="70"
+          height="19"
+        >
+          <use href="/icons.svg#100-perc" width="70" height="19" />
+        </motion.svg>
+        <motion.p
+          variants={wavyBounceInContentVariants}
+          className="text-center text-black text-opacity-70 text-sm font-bold font-dm"
+        >
+          Organic & Toxin-free
+        </motion.p>
+      </motion.div>
+    </div>
   );
 }
 

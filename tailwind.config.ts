@@ -21,6 +21,7 @@ const config: Config = {
         noto: ["var(--noto-sans-mono)", "sans-serif"],
         dm: ["var(--dm-sans)", "sans-serif"],
         millik: ["millik", "sans"],
+        jomhuria: ["Jomhuria", "sans-serif"],
       },
       container: {
         center: true,

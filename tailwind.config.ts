@@ -20,6 +20,7 @@ const config: Config = {
       fontFamily: {
         noto: ["var(--noto-sans-mono)", "sans-serif"],
         dm: ["var(--dm-sans)", "sans-serif"],
+        montserrat: ["var(--montserrat)", "sans-serif"],
         millik: ["millik", "sans"],
         jomhuria: ["Jomhuria", "sans-serif"],
       },

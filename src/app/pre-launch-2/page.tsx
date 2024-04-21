@@ -53,7 +53,7 @@ function Header() {
       variants={headerVariants}
       initial="initial"
       animate="animate"
-      className="fixed left-0 right-0 top-0 py-12  justify-center items-center flex  z-header"
+      className="absolute left-0 right-0 top-0 py-12  justify-center items-center flex  z-header"
     >
       <motion.div variants={logoVariants}>
         <Image
@@ -71,7 +71,7 @@ function Main() {
   return (
     <ReactLenis root>
       <Hero />
-      <main className="flex flex-col pb-10">
+      <main className="flex flex-col">
         <OurProduct />
         <WhyUs />
       </main>
@@ -111,7 +111,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="bg-primary-pink  py-28 sm:pt-56 sm:pb-48 relative overflow-x-clip isolate"
+      className="bg-primary-pink  py-44 sm:pt-56 sm:pb-48 relative overflow-x-clip isolate"
     >
       <div className="container grid grid-cols-1 xl:grid-cols-[0.53fr_0.47fr] gap-10">
         <motion.div
@@ -123,13 +123,13 @@ function Hero() {
         >
           <motion.h1
             variants={heroTextVariants}
-            className="text-[#BE046A] text-[42px] sm:text-[100px] font-normal font-jomhuria leading-[42px] sm:leading-[67px] mb-8"
+            className="text-[#BE046A] text-[56px] sm:text-[100px] font-normal font-jomhuria leading-[42px] sm:leading-[67px] mb-2.5"
           >
             Sustainable Period Care Curated For You
           </motion.h1>
           <motion.p
             variants={heroTextVariants}
-            className="font-noto text-[#BE046A] font-medium text-xl leading-[30px] mb-12"
+            className="font-montserrat text-[#BE046A] font-medium text-xl leading-[30px] mb-7"
           >
             Embrace Your Cycle with Confidence
           </motion.p>
@@ -151,11 +151,11 @@ function Hero() {
                 name="email"
                 autoComplete="on"
                 placeholder="Enter your email"
-                className="bg-white rounded-[10px] border border-[#D1D1D1] w-full p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 text-base font-medium font-noto flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
+                className="bg-white rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 text-base font-medium font-noto flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
               />
               <button
                 type="submit"
-                className="w-full py-4 bg-[#BE046A]  text-white rounded-[10px] shadow border"
+                className="w-full py-1 md:py-4 bg-[#BE046A] text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
               >
                 Join The Waiting List
               </button>
@@ -244,10 +244,10 @@ function OurProduct() {
           alt="girl with pad"
           className="self-center md:self-end flex-none"
         />
-        <div className="px-6  py-16 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 [&_p]:text-xl [&_li]:text-xl [&_p]:font-medium [&_li]:font-medium [&_p]:font-noto [&_li]:font-noto  [&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
+        <div className="px-6  pt-16 pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 md:[&_p]:text-xl md:[&_li]:text-xl [&_p]:font-medium [&_li]:font-medium [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
           <div className="flex flex-col">
             <h2>Our Product</h2>
-            <p>
+            <p className="font-montserrat">
               At LAM, we recognize that period care isn&apos;t a one size fits
               all solution. As a result we&apos;ve curated a diverse range of
               disposable and reusable menstrual products.
@@ -255,7 +255,7 @@ function OurProduct() {
           </div>
           <div className="flex flex-col">
             <h2>Why us</h2>
-            <ul className="flex flex-col gap-5 [&>*]:before:bg-[url('/heart.svg')] [&>*]:before:w-[30px] [&>*]:before:h-7 [&>*]:before:flex-none [&>*]:before:block [&>*]:flex [&>*]:gap-4">
+            <ul className="flex flex-col gap-5 [&>*]:before:bg-[url('/heart.svg')] [&>*]:font-montserrat [&>*]:before:w-[30px] [&>*]:before:h-7 [&>*]:before:flex-none [&>*]:before:block [&>*]:flex [&>*]:gap-4">
               <li>
                 We envision a world where sustainable period care products are
                 universally accessible, irrespective of one&apos;s
@@ -397,7 +397,7 @@ function WhyUs() {
       id="why-us"
       className="bg-[#BE046A] py-16 text-white relative overflow-hidden isolate"
     >
-      <div className="*:absolute *:-z-10">
+      <div className="*:absolute *:-z-10 hidden md:blo">
         <div className="rotate-[-20deg] top-[20%] left-[5%]">
           <Organic />
         </div>
@@ -413,8 +413,8 @@ function WhyUs() {
       </div>
       <div className="container">
         <div className="flex items-center flex-col  text-center gap-9 max-w-[829px] mx-auto text-whi">
-          <h2 className="text-2xl">Our Promise</h2>
-          <p className="text-[80px] md:text-[150px] leading-[0.75]">
+          <h2 className="text-2xl font-montserrat">Our Promise</h2>
+          <p className="text-[80px] md:text-[150px] leading-[0.75] drop-shadow-[0_4px_4px_#00000020]">
             Empowering Menstrual Health with{" "}
             <span className="text-[#FCF298]">Earth-Friendly</span> Solutions
           </p>
@@ -491,19 +491,19 @@ const heartBeat: Variants = {
 
 function Footer() {
   return (
-    <footer className="relative bg-[#FFFEF2] overflow-x-clip flex flex-col gap-32">
-      <div className="container">
+    <footer className="relative bg-[#FFFEF2] overflow-x-clip flex flex-col">
+      <div className="container py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
-          <form className="flex flex-col gap-8 font-noto text-body-text">
-            <header className=" flex flex-col gap-4">
-              <h2 className="text-base font-bold leading-none text-[#BE046A]">
+          <form className="flex flex-col gap-5 font-noto text-body-text">
+            <header className=" flex flex-col gap-5">
+              <h2 className="text-base font-bold leading-none text-[#BE046A] font-dm">
                 Talk to us.
               </h2>
               <h3 className="text-[80px] text-[#BE046A] font-normal font-jomhuria leading-[0.5]">
                 We Hear You. Let&apos;s Start the Conversation.
               </h3>
             </header>
-            <p className="text-[#BE046A]">
+            <p className="text-[#BE046A] font-dm">
               Every question brings us closer. Every story empowers our
               community. Reach out to us - let&apos;s make menstrual care better
               together!
@@ -540,7 +540,7 @@ function Footer() {
             <footer className="flex items-center gap-2">
               <button
                 type="submit"
-                className="w-full px-6 py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-dm font-bold"
+                className="w-full px-6 py-1 md:py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-jomhuria text-[30px]"
               >
                 Log in
               </button>

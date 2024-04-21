@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Noto_Sans_Mono } from "next/font/google";
+import { DM_Sans, Montserrat, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
 const notoSansMono = Noto_Sans_Mono({
@@ -12,6 +12,12 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["600", "700"],
   variable: "--dm-sans",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--montserrat",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansMono.variable} ${dmSans.variable} bg-[#FFFEF2]`}
+        className={`${notoSansMono.variable} ${dmSans.variable} ${montserrat.variable} bg-[#FFFEF2]`}
       >
         {children}
       </body>

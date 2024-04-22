@@ -495,7 +495,7 @@ const heartBeat: Variants = {
 function Footer() {
   return (
     <footer className="relative bg-[#FFFEF2] overflow-x-clip flex flex-col">
-      <div className="container py-6 sm:py-10 md:py-32">
+      <div className="container py-6 pb-56 sm:py-10 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
           <form className="flex flex-col gap-5 font-noto text-body-text">
             <header className=" flex flex-col gap-5">

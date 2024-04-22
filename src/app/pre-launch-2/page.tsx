@@ -499,7 +499,7 @@ function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
           <form className="flex flex-col gap-5 font-noto text-body-text">
             <header className=" flex flex-col gap-5">
-              <h2 className="text-base font-bold leading-none text-[#BE046A] font-dm">
+              <h2 className="text-base leading-none text-[#BE046A] font-dm">
                 Talk to us.
               </h2>
               <h3 className="text-5xl md:text-[80px] text-[#BE046A] font-normal font-jomhuria leading-[0.5]">

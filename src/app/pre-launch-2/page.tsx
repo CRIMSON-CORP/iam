@@ -145,7 +145,7 @@ function Hero() {
           >
             <motion.div
               variants={heroTextVariants}
-              className="flex flex-col w-fullgap-4 sm:gap-6"
+              className="flex flex-col w-full gap-4 sm:gap-6"
             >
               <input
                 type="email"

@@ -245,7 +245,7 @@ function OurProduct() {
             alt="girl with pad"
             className="self-center md:self-end flex-none mx-auto"
           />
-          <div className="px-6 pt-12 sm:pt-16 pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 [&_p]:text-sm md:[&_p]:text-xl [&_p]:font-medium [&_li]:text-sm [&_li]:font-medium md:[&_li]:text-xl [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
+          <div className="sm:px-6 pt-12 sm:pt-16 pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 [&_p]:text-sm md:[&_p]:text-xl [&_p]:font-medium [&_li]:text-sm [&_li]:font-medium md:[&_li]:text-xl [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
             <div className="flex flex-col">
               <h2>Our Product</h2>
               <p className="font-montserrat">

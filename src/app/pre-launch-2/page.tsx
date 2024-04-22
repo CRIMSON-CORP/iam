@@ -555,7 +555,7 @@ function Footer() {
       </div>
       <div className="py-7 md:py-8 bg-[#FCF298]">
         <div className="container flex items-center justify-between gap-10 flex-wrap">
-          <div className="text-[#BE046A] text-[36px] dm:text-7xl font-normal font-jomhuria">
+          <div className="text-[#BE046A] text-[36px] sm:text-7xl font-normal font-jomhuria">
             <p className="flex items-center">Follow us</p>
           </div>
           <div className="flex items-center gap-8">

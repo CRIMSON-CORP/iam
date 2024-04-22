@@ -152,11 +152,11 @@ function Hero() {
                 name="email"
                 autoComplete="on"
                 placeholder="Enter your email"
-                className="bg-white text-xs md:text-base font-montserrat rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 font-medium flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
+                className="bg-white text-sm md:text-base font-montserrat rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 font-medium flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
               />
               <button
                 type="submit"
-                className="w-full pt-1 md:py-4 bg-[#BE046A] text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
+                className="w-full py-4 bg-[#BE046A] text-xl leading-[0.5] sm:text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
               >
                 Join The Waiting List
               </button>
@@ -168,7 +168,7 @@ function Hero() {
           alt="background"
           width={637}
           height={598}
-          className="w-full xl:max-w-[637px] translate-y-3"
+          className="w-screen -translate-x-6 sm:translate-x-0 sm:w-full max-w-none xl:max-w-[637px] translate-y-3"
         />
       </div>
     </section>
@@ -245,7 +245,7 @@ function OurProduct() {
             alt="girl with pad"
             className="self-center md:self-end flex-none mx-auto"
           />
-          <div className="sm:px-6 pt-12 sm:pt-16 pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 [&_p]:text-sm md:[&_p]:text-xl [&_p]:font-normal [&_li]:text-sm [&_li]:font-normal md:[&_li]:text-xl [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
+          <div className="sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 [&_p]:text-sm md:[&_p]:text-xl [&_p]:font-normal [&_li]:text-sm [&_li]:font-normal md:[&_li]:text-xl [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
             <div className="flex flex-col">
               <h2>Our Product</h2>
               <p className="font-montserrat">
@@ -415,9 +415,9 @@ function WhyUs() {
         </div>
       </div>
       <div className="container">
-        <div className="flex items-center flex-col  text-center gap-9 max-w-[829px] mx-auto text-whi">
+        <div className="flex items-center flex-col  text-center gap-2.5 sm:gap-9 max-w-[829px] mx-auto text-whi">
           <h2 className="text-sm md:text-2xl font-montserrat">Our Promise</h2>
-          <p className="text-[clamp(36px,10.5vw,150px)] leading-[0.75] drop-shadow-[0_4px_4px_#00000020]">
+          <p className="text-[clamp(36px,10.5vw,150px)] mx-auto max-w-[85%] leading-[0.75] drop-shadow-[0_4px_4px_#00000020]">
             Empowering Menstrual Health with{" "}
             <span className="text-[#FCF298]">Earth-Friendly</span> Solutions
           </p>
@@ -495,7 +495,7 @@ const heartBeat: Variants = {
 function Footer() {
   return (
     <footer className="relative bg-[#FFFEF2] overflow-x-clip flex flex-col">
-      <div className="container py-6 pb-56 sm:py-10 md:py-32">
+      <div className="container py-6 pb-8 sm:py-10 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
           <form className="flex flex-col gap-5 font-noto text-body-text">
             <header className=" flex flex-col gap-5">
@@ -517,20 +517,20 @@ function Footer() {
                 name="name"
                 placeholder="Your name"
                 autoComplete="on"
-                className="px-6 py-5 font-montserrat rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-6 py-5 font-montserrat text-sm md:text-base rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <input
                 type="email"
                 name="email"
                 autoComplete="on"
                 placeholder="Email Address"
-                className="px-6 py-5 font-montserrat rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-6 py-5 font-montserrat text-sm md:text-base rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <textarea
                 name="mesage"
                 rows={5}
-                placeholder="Write message, Your insights are invaluable. Drop us a message!"
-                className="px-6 py-5 font-montserrat rounded-[10px] bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                placeholder="Your insights are invaluable. Drop us a message!"
+                className="px-6 py-5 font-montserrat text-sm md:text-base rounded-[10px] bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               ></textarea>
             </div>
             <footer className="flex items-center gap-2">

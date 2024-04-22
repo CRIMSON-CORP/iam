@@ -10,7 +10,7 @@ const notoSansMono = Noto_Sans_Mono({
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--dm-sans",
 });
 

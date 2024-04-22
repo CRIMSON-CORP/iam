@@ -53,7 +53,7 @@ function Header() {
       variants={headerVariants}
       initial="initial"
       animate="animate"
-      className="absolute left-0 right-0 top-0 py-12  justify-center items-center flex  z-header"
+      className="absolute left-0 right-0 top-0 p-8 md:py-12  justify-center items-center flex  z-header"
     >
       <motion.div variants={logoVariants}>
         <Image
@@ -61,6 +61,7 @@ function Header() {
           width={125}
           height={41}
           alt="IAM logo"
+          className="w-[clamp(45px,10vw,125px)]"
         />
       </motion.div>
     </motion.header>
@@ -111,9 +112,9 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="bg-primary-pink  py-44 sm:pt-56 sm:pb-48 relative overflow-x-clip isolate"
+      className="bg-primary-pink pb-0 xl:pb-44 pt-20 sm:pt-56 relative overflow-hidden isolate"
     >
-      <div className="container grid grid-cols-1 xl:grid-cols-[0.53fr_0.47fr] gap-10">
+      <div className="container grid grid-cols-1 xl:grid-cols-[0.53fr_0.47fr] gap-10 items-center">
         <motion.div
           variants={heroContentVariants}
           initial="initial"
@@ -123,13 +124,13 @@ function Hero() {
         >
           <motion.h1
             variants={heroTextVariants}
-            className="text-[#BE046A] text-[56px] sm:text-[100px] font-normal font-jomhuria leading-[42px] sm:leading-[67px] mb-2.5"
+            className="text-[#BE046A] text-5xl sm:text-[56px] md:text-[100px] font-normal font-jomhuria leading-[42px] sm:leading-[67px] mb-1 sm:mb-2.5"
           >
             Sustainable Period Care Curated For You
           </motion.h1>
           <motion.p
             variants={heroTextVariants}
-            className="font-montserrat text-[#BE046A] font-medium text-xl leading-[30px] mb-7"
+            className="font-montserrat text-[#BE046A] font-medium text-sm sm:text-xl leading-[30px] mb-5 sm:mb-7"
           >
             Embrace Your Cycle with Confidence
           </motion.p>
@@ -144,33 +145,32 @@ function Hero() {
           >
             <motion.div
               variants={heroTextVariants}
-              className="flex flex-col w-full gap-6"
+              className="flex flex-col w-fullgap-4 sm:gap-6"
             >
               <input
                 type="email"
                 name="email"
                 autoComplete="on"
                 placeholder="Enter your email"
-                className="bg-white rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 text-base font-medium font-noto flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
+                className="bg-white text-xs md:text-base font-montserrat rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 font-medium flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
               />
               <button
                 type="submit"
-                className="w-full py-1 md:py-4 bg-[#BE046A] text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
+                className="w-full pt-1 md:py-4 bg-[#BE046A] text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
               >
                 Join The Waiting List
               </button>
             </motion.div>
           </motion.form>
         </motion.div>
+        <Image
+          src="/iam-boxes.png"
+          alt="background"
+          width={637}
+          height={598}
+          className="w-full xl:max-w-[637px] translate-y-3"
+        />
       </div>
-      <Image
-        src="/background.jpeg"
-        alt="background"
-        fill
-        objectFit="cover"
-        objectPosition="center"
-        className="-z-10"
-      />
     </section>
   );
 }
@@ -236,42 +236,45 @@ const wavyBounceInContentVariants: Variants = {
 function OurProduct() {
   return (
     <section id="our-product" className="relative">
-      <div className="flex flex-col-reverse md:flex-row text-[#BE046A]">
-        <Image
-          src="/girl-with-pad.png"
-          width={374.06}
-          height={513}
-          alt="girl with pad"
-          className="self-center md:self-end flex-none"
-        />
-        <div className="px-6  pt-16 pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 md:[&_p]:text-xl md:[&_li]:text-xl [&_p]:font-medium [&_li]:font-medium [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
-          <div className="flex flex-col">
-            <h2>Our Product</h2>
-            <p className="font-montserrat">
-              At LAM, we recognize that period care isn&apos;t a one size fits
-              all solution. As a result we&apos;ve curated a diverse range of
-              disposable and reusable menstrual products.
-            </p>
-          </div>
-          <div className="flex flex-col">
-            <h2>Why us</h2>
-            <ul className="flex flex-col gap-5 [&>*]:before:bg-[url('/heart.svg')] [&>*]:font-montserrat [&>*]:before:w-[30px] [&>*]:before:h-7 [&>*]:before:flex-none [&>*]:before:block [&>*]:flex [&>*]:gap-4">
-              <li>
-                We envision a world where sustainable period care products are
-                universally accessible, irrespective of one&apos;s
-                socio-economic status.
-              </li>
-              <li>
-                We aim to create a supportive community and integrate good
-                menstrual health practices into your lifestyle.
-              </li>
-              <li>
-                We are committed to challenging the stigma and taboos
-                surrounding menstruation in Africa by fostering open and honest
-                dialogue, empowering women and girls, dismantle barriers, and
-                ensuring access to essential menstrual health resources.
-              </li>
-            </ul>
+      <div className="container">
+        <div className="flex flex-col-reverse xl:flex-row text-[#BE046A]">
+          <Image
+            src="/girl-with-pad.png"
+            width={441}
+            height={605}
+            alt="girl with pad"
+            className="self-center md:self-end flex-none mx-auto"
+          />
+          <div className="px-6 pt-12 sm:pt-16 pb-20 flex flex-col gap-8 self-center [&>*]:flex [&>*]:flex-col [&>*]:gap-4 [&_p]:text-sm md:[&_p]:text-xl [&_p]:font-medium [&_li]:text-sm [&_li]:font-medium md:[&_li]:text-xl [&_h2]:text-4xl md:[&_h2]:text-[50px] [&_h2]:font-jomhuria [&_h2]:leading-[0.5] [&_h2]:drop-shadow-[0px_4px_8px_rgba(190,4,106,0.39)]">
+            <div className="flex flex-col">
+              <h2>Our Product</h2>
+              <p className="font-montserrat">
+                At LAM, we recognize that period care isn&apos;t a one size fits
+                all solution. As a result we&apos;ve curated a diverse range of
+                disposable and reusable menstrual products.
+              </p>
+            </div>
+            <div className="flex flex-col">
+              <h2>Why us</h2>
+              <ul className="flex flex-col gap-5 [&>*]:before:bg-[url('/heart.svg')] [&>*]:font-montserrat [&>*]:before:w-[30px] [&>*]:before:h-7 [&>*]:before:flex-none [&>*]:before:block [&>*]:flex [&>*]:gap-4">
+                <li>
+                  We envision a world where sustainable period care products are
+                  universally accessible, irrespective of one&apos;s
+                  socio-economic status.
+                </li>
+                <li>
+                  We aim to create a supportive community and integrate good
+                  menstrual health practices into your lifestyle.
+                </li>
+                <li>
+                  We are committed to challenging the stigma and taboos
+                  surrounding menstruation in Africa by fostering open and
+                  honest dialogue, empowering women and girls, dismantle
+                  barriers, and ensuring access to essential menstrual health
+                  resources.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -395,7 +398,7 @@ function WhyUs() {
   return (
     <section
       id="why-us"
-      className="bg-[#BE046A] py-16 text-white relative overflow-hidden isolate"
+      className="bg-[#BE046A] bg-[url('/product-background-mobile.png')] md:bg-[url('/product-background-desktop.png')] bg-cover bg-center py-16 text-white relative overflow-hidden isolate"
     >
       <div className="*:absolute *:-z-10 hidden md:blo">
         <div className="rotate-[-20deg] top-[20%] left-[5%]">
@@ -413,8 +416,8 @@ function WhyUs() {
       </div>
       <div className="container">
         <div className="flex items-center flex-col  text-center gap-9 max-w-[829px] mx-auto text-whi">
-          <h2 className="text-2xl font-montserrat">Our Promise</h2>
-          <p className="text-[80px] md:text-[150px] leading-[0.75] drop-shadow-[0_4px_4px_#00000020]">
+          <h2 className="text-sm md:text-2xl font-montserrat">Our Promise</h2>
+          <p className="text-[clamp(36px,10.5vw,150px)] leading-[0.75] drop-shadow-[0_4px_4px_#00000020]">
             Empowering Menstrual Health with{" "}
             <span className="text-[#FCF298]">Earth-Friendly</span> Solutions
           </p>
@@ -492,18 +495,18 @@ const heartBeat: Variants = {
 function Footer() {
   return (
     <footer className="relative bg-[#FFFEF2] overflow-x-clip flex flex-col">
-      <div className="container py-32">
+      <div className="container py-6 sm:py-10 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
           <form className="flex flex-col gap-5 font-noto text-body-text">
             <header className=" flex flex-col gap-5">
               <h2 className="text-base font-bold leading-none text-[#BE046A] font-dm">
                 Talk to us.
               </h2>
-              <h3 className="text-[80px] text-[#BE046A] font-normal font-jomhuria leading-[0.5]">
+              <h3 className="text-5xl md:text-[80px] text-[#BE046A] font-normal font-jomhuria leading-[0.5]">
                 We Hear You. Let&apos;s Start the Conversation.
               </h3>
             </header>
-            <p className="text-[#BE046A] font-dm">
+            <p className="text-[#BE046A] font-dm font-normal">
               Every question brings us closer. Every story empowers our
               community. Reach out to us - let&apos;s make menstrual care better
               together!
@@ -514,27 +517,20 @@ function Footer() {
                 name="name"
                 placeholder="Your name"
                 autoComplete="on"
-                className="px-6 py-5 rounded-[10px] leading-none bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-6 py-5 font-montserrat rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <input
                 type="email"
                 name="email"
                 autoComplete="on"
                 placeholder="Email Address"
-                className="px-6 py-5 rounded-[10px] leading-none bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
-              />
-              <input
-                type="tel"
-                name="phone-number"
-                autoComplete="on"
-                placeholder="+234 800 123 4567"
-                className="px-6 py-5 rounded-[10px] leading-none bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-6 py-5 font-montserrat rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <textarea
                 name="mesage"
                 rows={5}
                 placeholder="Write message, Your insights are invaluable. Drop us a message!"
-                className="px-6 py-5 rounded-[10px] bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-6 py-5 font-montserrat rounded-[10px] bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               ></textarea>
             </div>
             <footer className="flex items-center gap-2">
@@ -557,10 +553,10 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className=" py-8 bg-[#FCF298]">
+      <div className="py-7 md:py-8 bg-[#FCF298]">
         <div className="container flex items-center justify-between gap-10 flex-wrap">
-          <div className="text-[#BE046A] text-7xl font-normal font-jomhuria">
-            <p>Follow us</p>
+          <div className="text-[#BE046A] text-[36px] dm:text-7xl font-normal font-jomhuria">
+            <p className="flex items-center">Follow us</p>
           </div>
           <div className="flex items-center gap-8">
             <a href="">

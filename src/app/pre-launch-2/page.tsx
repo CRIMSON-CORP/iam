@@ -538,7 +538,7 @@ function Footer() {
                 type="submit"
                 className="w-full px-6 py-1 md:py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-jomhuria text-[30px]"
               >
-                Log in
+                Send
               </button>
             </footer>
           </form>

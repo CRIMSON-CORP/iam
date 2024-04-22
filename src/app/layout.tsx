@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--montserrat",
 });
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansMono.variable} ${dmSans.variable} ${montserrat.variable} bg-[#FFFEF2]`}
+        className={`${notoSansMono.variable} ${dmSans.variable} ${montserrat.variable} bg-[#FFFFFF]`}
       >
         {children}
       </body>

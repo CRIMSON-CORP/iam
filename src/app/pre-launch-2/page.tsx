@@ -398,7 +398,7 @@ function WhyUs() {
   return (
     <section
       id="why-us"
-      className="bg-[#BE046A] bg-[url('/product-background-mobile.png')] md:bg-[url('/product-background-desktop.png')] bg-cover bg-center py-28 md:py-16 text-white relative overflow-hidden isolate"
+      className="bg-[#BE046A] bg-[url('/product-background-mobile.png')] md:bg-[url('/product-background-desktop.png')] bg-contain bg-center bg-no-repeat py-28 md:py-16 text-white relative overflow-hidden isolate"
     >
       <div className="container">
         <div className="flex items-center flex-col  text-center gap-2.5 sm:gap-9 max-w-[829px] mx-auto text-whi">

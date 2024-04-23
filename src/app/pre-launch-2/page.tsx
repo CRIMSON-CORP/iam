@@ -61,7 +61,7 @@ function Header() {
           width={125}
           height={41}
           alt="IAM logo"
-          className="w-[clamp(45px,10vw,125px)]"
+          className="w-[clamp(60px,10vw,125px)]"
         />
       </motion.div>
     </motion.header>
@@ -152,7 +152,7 @@ function Hero() {
                 name="email"
                 autoComplete="on"
                 placeholder="Enter your email"
-                className="bg-white text-sm md:text-base font-montserrat rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 font-medium flex-1 shadow-[inset_4px_4px_4px_rgba(0,0,0,0.25)]"
+                className="bg-white text-[10px] md:text-base font-montserrat rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 font-medium flex-1"
               />
               <button
                 type="submit"
@@ -398,7 +398,7 @@ function WhyUs() {
   return (
     <section
       id="why-us"
-      className="bg-[#BE046A] bg-[url('/product-background-mobile.png')] md:bg-[url('/product-background-desktop.png')] bg-contain bg-center bg-no-repeat py-28 md:py-16 text-white relative overflow-hidden isolate"
+      className="bg-[#BE046A] bg-[url('/product-background-mobile.svg')] md:bg-[url('/product-background-desktop.svg')] bg-contain bg-center bg-no-repeat py-28 md:py-16 text-white relative overflow-hidden isolate"
     >
       <div className="container">
         <div className="flex items-center flex-col  text-center gap-2.5 sm:gap-9 max-w-[829px] mx-auto text-whi">
@@ -503,28 +503,28 @@ function Footer() {
               <input
                 type="text"
                 name="name"
-                placeholder="Your name"
+                placeholder="Name"
                 autoComplete="on"
-                className="px-6 py-5 font-montserrat text-sm md:text-base rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-4 md:px-6 py-5 font-montserrat text-[10px] md:text-base rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <input
                 type="email"
                 name="email"
                 autoComplete="on"
                 placeholder="Email Address"
-                className="px-6 py-5 font-montserrat text-sm md:text-base rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-4 md:px-6 py-5 font-montserrat text-[10px] md:text-base rounded-[10px] leading-none bg-[#FCF298] border border-[#D1D1D1] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               />
               <textarea
                 name="mesage"
                 rows={5}
                 placeholder="Your insights are invaluable. Drop us a message!"
-                className="px-6 py-5 font-montserrat text-sm md:text-base rounded-[10px] bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
+                className="px-4 md:px-6 py-5 font-montserrat text-[10px] md:text-base rounded-[10px] bg-[#FCF298] placeholder:text-body-text border-opacity-50 placeholder:opacity-50"
               ></textarea>
             </div>
             <footer className="flex items-center gap-2">
               <button
                 type="submit"
-                className="w-full px-6 py-1 md:py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-jomhuria text-[30px]"
+                className="w-full h-10 md:h-auto px-6 py-1 md:py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-jomhuria text-xl md:text-[30px]"
               >
                 Send
               </button>

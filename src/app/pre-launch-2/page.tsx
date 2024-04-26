@@ -4,12 +4,14 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import { Variants, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 function page() {
   return (
     <div className="font-jomhuria">
       <Header />
       <Main />
+      <Toaster />
     </div>
   );
 }
@@ -109,6 +111,39 @@ const heroTextVariants: Variants = {
 };
 
 function Hero() {
+  const onSubmit: React.FormEventHandler = async (e) => {
+    const formElement = e.target as HTMLFormElement;
+    toast.promise(
+      (async () => {
+        try {
+          e.preventDefault();
+          const formData = new FormData(formElement);
+          formElement.classList.add("running");
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_BACKEND_API_ENDPOINT}/api/waitlist.php`,
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+          if (!response.ok) throw new Error("Error"); //Throw custom error message
+          formElement.reset();
+        } catch (error) {
+        } finally {
+          formElement.classList.remove("running");
+        }
+      })(),
+      {
+        loading: "Submitting...", // loading message
+        error: (err) => `Error: ${err}`, //error messsage
+        success: () => `Success!`, // Success message
+      },
+      {
+        duration: 10000, // duration of toast
+        className: "text-xl font-dm",
+      }
+    );
+  };
   return (
     <section
       id="hero"
@@ -141,7 +176,8 @@ function Hero() {
             initial="initial"
             whileInView="animate"
             viewport={viewport}
-            className="flex flex-col gap-6 max-w-[422px]"
+            onSubmit={onSubmit}
+            className="flex flex-col gap-6 max-w-[422px] group"
           >
             <motion.div
               variants={heroTextVariants}
@@ -151,12 +187,13 @@ function Hero() {
                 type="email"
                 name="email"
                 autoComplete="on"
+                required
                 placeholder="Enter your email"
                 className="bg-white text-[10px] md:text-base font-montserrat rounded-[10px] border border-[#D1D1D1] w-full p-3 md:p-5 text-body-text placeholder:text-body-text placeholder:text-opacity-50 font-medium flex-1"
               />
               <button
                 type="submit"
-                className="w-full py-4 bg-[#BE046A] text-xl leading-[0.5] sm:text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
+                className="group-[.running]:pointer-events-none group-[.running]:opacity-70 w-full py-4 bg-[#BE046A] text-xl leading-[0.5] sm:text-[30px] text-white rounded-[10px] shadow-[0px_15px_30px_-10px_#7754f645]"
               >
                 Join The Waiting List
               </button>
@@ -481,11 +518,46 @@ const heartBeat: Variants = {
 };
 
 function Footer() {
+  const onSubmit: React.FormEventHandler = async (e) => {
+    const formElement = e.target as HTMLFormElement;
+    toast.promise(
+      (async () => {
+        try {
+          e.preventDefault();
+          const formData = new FormData(formElement);
+          formElement.classList.add("running");
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_BACKEND_API_ENDPOINT}/api/contact.php`,
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+          if (!response.ok) throw new Error("Error");
+          formElement.reset();
+        } catch (error) {
+        } finally {
+          formElement.classList.remove("running");
+        }
+      })(),
+      {
+        loading: "Submitting...",
+        error: (err) => `Error: ${err}`,
+        success: () => `Success!`,
+      },
+      {
+        className: "text-xl font-dm",
+      }
+    );
+  };
   return (
     <footer className="relative bg-[#FFFEF2] overflow-x-clip flex flex-col">
       <div className="container py-6 pb-8 sm:py-10 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 sm:gap-32">
-          <form className="flex flex-col gap-5 font-noto text-body-text">
+          <form
+            onSubmit={onSubmit}
+            className="flex flex-col gap-5 font-noto text-body-text"
+          >
             <header className=" flex flex-col gap-5">
               <h2 className="text-base leading-none text-[#BE046A] font-dm">
                 Talk to us.
@@ -524,7 +596,7 @@ function Footer() {
             <footer className="flex items-center gap-2">
               <button
                 type="submit"
-                className="w-full h-10 md:h-auto px-6 py-1 md:py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-jomhuria text-xl md:text-[30px]"
+                className="group-[.running]:pointer-events-none group-[.running]:opacity-70 w-full h-10 md:h-auto px-6 py-1 md:py-3.5 bg-[#BE046A] rounded-[10px] border justify-center items-center gap-0.5 inline-flex text-white font-jomhuria text-xl md:text-[30px]"
               >
                 Send
               </button>

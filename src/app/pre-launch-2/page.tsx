@@ -119,24 +119,27 @@ function Hero() {
           e.preventDefault();
           const formData = new FormData(formElement);
           formElement.classList.add("running");
-          const response = await fetch(
-            `${process.env.NEXT_PUBLIC_BACKEND_API_ENDPOINT}/api/waitlist.php`,
-            {
-              method: "POST",
-              body: formData,
-            }
-          );
-          if (!response.ok) throw new Error("Error"); //Throw custom error message
+          const response = await fetch(`/api/waitlist.php`, {
+            method: "POST",
+            body: formData,
+          });
+
+          if (!response) throw "Network Failed";
+          if (!response.ok) throw "Failed to Reach Server"; //Throw custom error message
+          const data = await response.json();
+          if (!data.status) throw data.message;
           formElement.reset();
-        } catch (error) {
+          return data.message;
+        } catch (error: any) {
+          throw error;
         } finally {
           formElement.classList.remove("running");
         }
       })(),
       {
         loading: "Submitting...", // loading message
-        error: (err) => `Error: ${err}`, //error messsage
-        success: () => `Success!`, // Success message
+        error: (err) => err, //error messsage
+        success: (message) => message, // Success message
       },
       {
         duration: 10000, // duration of toast
@@ -526,24 +529,26 @@ function Footer() {
           e.preventDefault();
           const formData = new FormData(formElement);
           formElement.classList.add("running");
-          const response = await fetch(
-            `${process.env.NEXT_PUBLIC_BACKEND_API_ENDPOINT}/api/contact.php`,
-            {
-              method: "POST",
-              body: formData,
-            }
-          );
-          if (!response.ok) throw new Error("Error");
+          const response = await fetch(`/api/contact.php`, {
+            method: "POST",
+            body: formData,
+          });
+
+          if (!response) throw "Network Failed";
+          if (!response.ok) throw "Failed to Reach Server"; //Throw custom error message
+          const data = await response.json();
+          if (!data.status) throw data.message;
           formElement.reset();
+          return data.message;
         } catch (error) {
         } finally {
           formElement.classList.remove("running");
         }
       })(),
       {
-        loading: "Submitting...",
-        error: (err) => `Error: ${err}`,
-        success: () => `Success!`,
+        loading: "Submitting...", // loading message
+        error: (err) => err, //error messsage
+        success: (message) => message, // Success message
       },
       {
         className: "text-xl font-dm",
